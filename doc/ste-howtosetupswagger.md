@@ -161,4 +161,4 @@ public class ProductController
 public ResponseEntity<Response> save
 ....
 ``` 			
-
+![image](https://github.com/denitiawan/research-swagger-springboot-two/assets/11941308/809dfb36-29da-450b-be53-08fe0a1269d3)
