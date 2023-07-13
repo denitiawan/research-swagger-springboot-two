@@ -134,8 +134,13 @@ public class SwaggerConfig {
 }
 ```
 
-### 5. Setup Rest Controller
-[ProductController.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/module/product/ProductController.java)
+### 5. Setup Rest Controller with Swagger Annotation
+#### Examples
+- [LoginController.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/module/auth/LoginController.java)
+- [UserController.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/module/user/UserController.java)
+- [ProductController.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/module/product/ProductController.java)
+
+#### Swagger Annotation
 - @Tag `The name of controller, will showing on swagger-ui`
 ```
 @Tag(name = "product")
