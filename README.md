@@ -2,22 +2,33 @@
 In this repo, have example codes for how to implementation `Swagger-UI` on Springboot 2** Project.
 
 
-### Overviews
+## Overviews
 - [Run docker compose](#run-docker-compose)
-- [Implementation Swagger-UI]()
+- [Implementation Swagger-UI](#implementation-swagger-ui)
 
-### Run Docker Compose
+## 1. Run Docker Compose
 `docker-compose up -d`
 
-# 
+## 2. Implementation Swagger-UI
 
+###  add OpenAPI librarry on Pom.xml
+```
+   <!--  open api-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.10</version>
+        </dependency>
+```
+### add Swagger setting on application.yml
+```
+# http://localhost:5050/swagger-ui/index.html
+spring:
+  api-docs:
+    enabled: true
+```
 
-
-# install lib on pom
-
-# setting on application.yml
-
-# SwaggerConfig file
+### SwaggerConfig file
 - API DOC INFORMATION
 	we can add information all about application such as (name, email, url web, license, etc)
 
@@ -34,7 +45,7 @@ In this repo, have example codes for how to implementation `Swagger-UI` on Sprin
 - MAKE TAG STRUCTURE
    for making structure and manage of controller / taging
 
-# Annotation on Controller
+### Annotation on Controller
 - @Tag(name = "warehouse")
     give name /taging of controller
 	
