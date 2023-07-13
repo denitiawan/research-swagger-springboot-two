@@ -19,7 +19,7 @@ public class BaseController {
 
     public ResponseEntity responseEntity;
     public final String header_authorization_name = TOKEN_X_KEY;
-    public final String header_authorization_description = "Bearer JWT Token from Authorize";
+    public final String header_authorization_description = "JWT Token from Authorize button";
 
 
     String headerIsNotValid(String header) {

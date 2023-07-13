@@ -72,7 +72,7 @@ public class ProductController extends BaseController {
 
 
     @Operation(summary = swagger_operation_name_list)
-    @ApiResponses(value = {@ApiResponse(content = {@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Product.class)))})})
+    @ApiResponses(value = {@ApiResponse(content = {@Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = ProductDTO.class)))})})
     @CrossOrigin
     @Secured("ROLE_ADMIN")
     @RequestMapping(value = "/list", method = {RequestMethod.GET})
