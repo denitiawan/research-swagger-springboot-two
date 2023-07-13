@@ -2,22 +2,9 @@ In this repo, have example codes for how to implementation `Swagger-UI` on Sprin
 
 
 ## Overviews
-- [Run docker compose](#1-run-docker-compose)
-- [Run Application](#2-run-application)
+- [Run docker compose]()
+- [Run Application](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/doc/step-runapplication.md)
 - [How to implement Swagger-UI](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/doc/howToImplementSwaggerOnSpringboot.md)
-
-## 1. Run Docker Compose
-- run `docker-compose up -d` on terminal, for create `mysql docker container`
-- make sure `Docker container` success to create	
-
-## 2. Run Application
-- open `backend` folder on `IntelijIDEA` or Other Editor
-- run project
-- open `Swagger-ui` page on link (http://localhost:5050/swagger-ui/index.html)
-![image](https://github.com/denitiawan/research-swagger-springboot-two/assets/11941308/809dfb36-29da-450b-be53-08fe0a1269d3)
-
-
-
 
 
 
