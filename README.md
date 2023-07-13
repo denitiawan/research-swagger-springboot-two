@@ -21,7 +21,7 @@ In this repo, have example codes for how to implementation `Swagger-UI` on Sprin
 
 ## 3. How to implement Swagger-UI 
 ###  add OpenAPI librarry on Pom.xml
-[Pom.xml]()
+[Pom.xml](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/pom.xml)
 ```
    <!--  open api-->
         <dependency>
@@ -31,7 +31,7 @@ In this repo, have example codes for how to implementation `Swagger-UI` on Sprin
         </dependency>
 ```
 ### add Swagger setting on application.yml
-[application.yml]()
+[application.yml](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/resources/application.yml)
 ```
 # http://localhost:5050/swagger-ui/index.html
 spring:
@@ -40,7 +40,7 @@ spring:
 ```
 
 ### Create SwaggerConfig.java file
-[SwaggerConfig.java]()
+[SwaggerConfig.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/adapter/swagger/SwaggerConfig.java)
 ```
 package com.deni.app.adapter.swagger;
 
@@ -130,7 +130,7 @@ public class SwaggerConfig {
 
 
 ### Give public access for endpoint (http://localhost:5050/swagger-ui/index.html) on SecurityConfiguration.java 
-[SecurityConfiguration.java]()
+[SecurityConfiguration.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/security/config/SecurityConfiguration.java)
 ```
   /**
      * this function for supporting permit all access from http.authorizeRequests()
