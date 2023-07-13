@@ -1,7 +1,7 @@
 [Back](https://github.com/denitiawan/research-swagger-springboot-two)
 
-## 3. How to implement Swagger-UI 
-###  add OpenAPI librarry on Pom.xml
+# How to Setup & implement Swagger-UI on Springboot Project
+###  1. add OpenAPI librarry on Pom.xml
 [Pom.xml](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/pom.xml)
 ```
    <!--  open api-->
@@ -11,7 +11,7 @@
             <version>1.6.10</version>
         </dependency>
 ```
-### add Swagger setting on application.yml
+### 2. add Swagger setting on application.yml
 [application.yml](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/resources/application.yml)
 ```
 # http://localhost:5050/swagger-ui/index.html
@@ -20,7 +20,7 @@ spring:
     enabled: true
 ```
 
-### Create SwaggerConfig.java file
+### 3. Create SwaggerConfig.java file
 [SwaggerConfig.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/adapter/swagger/SwaggerConfig.java)
 ```
 package com.deni.app.adapter.swagger;
@@ -110,7 +110,7 @@ public class SwaggerConfig {
 
 
 
-### Give public access for endpoint (http://localhost:5050/swagger-ui/index.html) on SecurityConfiguration.java 
+### 4. Give public access for endpoint (http://localhost:5050/swagger-ui/index.html) on SecurityConfiguration.java 
 [SecurityConfiguration.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/security/config/SecurityConfiguration.java)
 ```
   /**
@@ -134,4 +134,26 @@ public class SwaggerConfig {
 }
 ```
 
+### 5. Setup Rest Controller
+[ProductController.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/module/product/ProductController.java)
+- @Tag `The name of controller, will showing on swagger-ui`
+```
+@Tag(name = "product")
+public class ProductController
+.....
+```
+- @Hidden `This for hide controller, and will not showing on swagger-ui`
+```
+@Hidden
+public class ProductController
+.....
+```
+- @Operation  `The name of endpoint, will showing on swagger-ui`
+- @ApiResponses  `The response body of endpoint, will showing on swagger-ui`
+```
+@Operation (name="Save Data")
+@ApiResponses (schema = ProductDTO.class) 
+public ResponseEntity<Response> save
+....
+``` 			
 
