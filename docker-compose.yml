@@ -1,0 +1,41 @@
+version: '3.5'
+
+services:
+
+  mysql:
+    container_name: 'swagger_spring_mysql'
+    image: mysql:5.7    
+    environment:      
+      MYSQL_DATABASE: 'db_mysql'              
+      MYSQL_USER: 'user'      
+      MYSQL_PASSWORD: 'password'      
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_TCP_PORT: 1234
+    ports:
+      - 1234:1234
+    expose:
+      - '1234'
+    volumes:    
+      - ./mysql:/docker-entrypoint-initdb.d/
+      - mysql:/var/lib/mysql
+    networks:
+      - swagger_spring_network      
+    
+    mem_limit: 512m
+    mem_reservation: 128M
+    cpus: 0.5   
+          
+       
+       
+networks:  
+  swagger_spring_network:  
+    name: swagger_spring_network  
+    driver: bridge
+
+volumes:      
+  mysql:
+    name: swagger_spring_mysql  
+  
+    
+     
+ 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- FOR CREATE logs FOLDER ON LOKAL PC-->
+    <property name="DEV_HOME" value="logs"/>
+
+    <!-- FOR SYSTEM OUT PRINTLINE LOG-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} -
+                %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+
+
+    <!-- FOR CREATING THE logger.log file-->
+    <appender name="FILE-LOGGER"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${DEV_HOME}/logger.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} -
+                %msg%n
+            </Pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>${DEV_HOME}/archived/logger.%d{yyyy-MM-dd}.%i.log
+            </fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>10MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+
+    </appender>
+
+
+    <!--
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <appender name="ELK-LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>localhost:5000</destination>
+        <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+            <providers>
+                <mdc/>
+                <context/>
+                <logLevel/>
+                <loggerName/>
+                <pattern>
+                    <pattern>
+                        {
+                        "app": "test-log"
+                        }
+                    </pattern>
+                </pattern>
+                <threadName/>
+                <message/>
+                <logstashMarkers/>
+                <stackTrace/>
+            </providers>
+        </encoder>
+    </appender>
+
+
+    -->
+
+    <!-- WILL CATCH LEVEL INFO FROM SPRING-->
+    <logger name="org.springframework" level="info">
+        <appender-ref ref="FILE-LOGGER"/>
+    </logger>
+
+    <!-- WILL CATCH LEVEL INFO FROM ROOT-->
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <!-- WILL CATCH ALL LOGGER TYPE (INFO, WARN, ERROR, DEBUG ) AND WRITE INTO FILE-->
+    <logger name="com.deni.app">
+        <appender-ref ref="FILE-LOGGER"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+</configuration>
