@@ -73,13 +73,13 @@ import io.swagger.v3.oas.annotations.tags.Tag;
  * Value on @SecurityScheme must be same with JWT generator when hit api (/v1/auth/login)
  * Security Schema type : apiKey
  */
-@SecurityScheme(
-        name = "Authorization",
-        description = "Get JWT Token from hit api (v1/auth/login)",
-        scheme = "Authorization",
-        type = SecuritySchemeType.APIKEY,
-        in = SecuritySchemeIn.HEADER
-)
+//@SecurityScheme(
+//        name = "Authorization",
+//        description = "Get JWT Token from hit api (v1/auth/login)",
+//        scheme = "Authorization",
+//        type = SecuritySchemeType.APIKEY,
+//        in = SecuritySchemeIn.HEADER
+//)
 
 
 /**
@@ -87,13 +87,13 @@ import io.swagger.v3.oas.annotations.tags.Tag;
  * Value on @SecurityScheme must be same with JWT generator when hit api (/v1/auth/login)
  * Security Schema type : http (Bearer)
  */
-//@SecurityScheme(
-//        name = "Authorization",
-//        description = "Get Bearer JWT Token from hit api (v1/auth/login)",
-//        scheme = "bearer",
-//        type = SecuritySchemeType.HTTP,
-//        bearerFormat = "JWT",
-//        in = SecuritySchemeIn.HEADER
-//)
+@SecurityScheme(
+        name = "Authorization",
+        description = "Get Bearer JWT Token from hit api (v1/auth/login)",
+        scheme = "bearer",
+        type = SecuritySchemeType.HTTP,
+        bearerFormat = "JWT",
+        in = SecuritySchemeIn.HEADER
+)
 public class SwaggerConfig {
 }
