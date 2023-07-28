@@ -165,5 +165,5 @@ public class ProductController extends BaseController {
 ```
 
 ### Run Application
-
+![image](https://github.com/denitiawan/research-swagger-springboot-two/assets/11941308/0d0397c7-be49-430e-9295-0cef4e3bfef0)
 
