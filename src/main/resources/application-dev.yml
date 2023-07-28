@@ -1,11 +1,11 @@
 server:
-  port: 5050
+  port: 6060
 
 spring:
 
   # mysql
   datasource:
-    url: jdbc:mysql://localhost:1234/db_mysql
+    url: jdbc:mysql://localhost:3331/db_mysql
     username: user
     password: password
     spring:

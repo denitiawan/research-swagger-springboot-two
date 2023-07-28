@@ -17,21 +17,21 @@ import io.swagger.v3.oas.annotations.tags.Tag;
         info = @Info(
 
                 // APP INFO
-                title = "NexSoft Demo Swagger Springboot",
-                description = "Api Document & Spesification using Swagger-ui by OpenAPI",
+                title = "Demo Swagger-UI on Springboot2 for Nexsoft Project",
+                description = "Implement swagger-ui on Go project with Gorilla Mux (web framework) + JWT Authorization",
                 version = "0.0.0.1",
 
                 // CONTACT
                 contact = @Contact(
-                        name = "Customer Support",
-                        email = "cs@gmail.com",
+                        name = "",
+                        email = "",
                         url = "http://denitiawan.medium.com"
                 ),
 
 
                 // LICENSE
                 license = @License(
-                        name = "license name ex (MIT license)",
+                        name = "",
                         url = "http://denitiawan.medium.com"
 
                 ),
@@ -44,11 +44,15 @@ import io.swagger.v3.oas.annotations.tags.Tag;
         servers = {
                 @Server(
                         description = "LOCAL ENV",
-                        url = "http://localhost:5050"
+                        url = "http://localhost:6060"
                 ),
                 @Server(
                         description = "STAG ENV",
-                        url = "http://111.222.333.444:5050"
+                        url = "http://IPADDRESS:PORT"
+                ),
+                @Server(
+                        description = "PROD ENV",
+                        url = "http://IPADDRESS:PORT"
                 )
         },
 
