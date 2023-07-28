@@ -1,6 +1,7 @@
 ## About
-Research how to implement swagger on go (go.mod) using gorilla mux & net/http
-![image](https://github.com/denitiawan/research-swagger-gomod-gorillamux/assets/11941308/629ea8be-b404-4a55-bae8-f5846b3f6930)
+Research how to implement swagger on Springboot Project
+![image](https://github.com/denitiawan/research-swagger-springboot-two/assets/11941308/0d0397c7-be49-430e-9295-0cef4e3bfef0)
+
 
 ## Requirement
 
