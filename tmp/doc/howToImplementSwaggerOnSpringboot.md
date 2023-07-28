@@ -1,6 +1,10 @@
 [Back](https://github.com/denitiawan/research-swagger-springboot-two)
 
-## 3. How to implement Swagger-UI 
+## How to implement Swagger-UI 
+![image](https://github.com/denitiawan/research-swagger-springboot-two/assets/11941308/2caa0534-59e1-46f2-b57f-b004d43faa65)
+
+
+
 ###  add OpenAPI librarry on Pom.xml
 [Pom.xml](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/pom.xml)
 ```
@@ -110,7 +114,7 @@ public class SwaggerConfig {
 
 
 
-### Give public access for endpoint (http://localhost:5050/swagger-ui/index.html) on SecurityConfiguration.java 
+### Give public access for endpoint (/swagger-ui/index.html) on SecurityConfiguration.java 
 [SecurityConfiguration.java](https://github.com/denitiawan/research-swagger-springboot-two/blob/main/backend/src/main/java/com/deni/app/security/config/SecurityConfiguration.java)
 ```
   /**
@@ -133,5 +137,33 @@ public class SwaggerConfig {
 	....
 }
 ```
+
+### Add Swagger Annotation on Controller
+
+#### Add Tag Name (Name of Controller)
+```
+@Tag(name = "product")
+@RestController
+@RequestMapping("/v1/product")
+public class ProductController extends BaseController {
+```
+
+#### Add (Summary, Api Response, Req Body, Http Header, Http Method)
+```
+    @Operation(summary = swagger_operation_name_save)
+    @ApiResponses(value = {@ApiResponse(content = {@Content(mediaType = "application/json", schema = @Schema(implementation = ProductDTO.class))})})
+    ....
+    ....
+    ....
+    public ResponseEntity<Response> save(
+            @RequestHeader(name = header_authorization_name, required = true,
+                    defaultValue = header_authorization_description) String authorization,
+            @RequestBody ProductDTO request) {
+        ResponseService response = service.save(request);
+        return ResponseHandler.createHttpResponse(response.getMessage(), response.getData(), response.getHttpStatus());
+    }
+```
+
+### Run Application
 
 
